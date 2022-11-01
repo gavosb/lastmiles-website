@@ -1,10 +1,10 @@
 import React from 'react';
 import '../App.css';
 import logo from '../logo.png';
-import ServerBrowser from './ServerBrowser.js';
-import Room from './Room.js';
+import AuctionBrowser from './AuctionBrowser.js';
+import Auction from './Auction.js';
 
-const Bid = () => {
+const Auction = () => {
 
   }
     return (
@@ -12,14 +12,14 @@ const Bid = () => {
         <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Bid Creatorh2>
+          <h2>Auction Creatorh2>
         </div>
         {getCurrentComponent()}
       </div>
     );
 }
  
-export default Bid;
+export default Auction;
 
 
 

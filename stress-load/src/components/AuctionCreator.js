@@ -3,7 +3,7 @@ import '../App.css';
 import logo from '../logo.png';
 import AuctionBrowser from './AuctionBrowser.js';
 
-const BidCreator = () => {
+const AuctionCreator = () => {
 
   }
     return (
@@ -11,11 +11,11 @@ const BidCreator = () => {
         <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Bid Creatorh2>
+          <h2>Auction Creatorh2>
         </div>
         {getCurrentComponent()}
       </div>
     );
 }
  
-export default BidCreator;
+export default AuctionCreator;

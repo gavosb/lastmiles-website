@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import logo from '../logo.png';
-import BidCreator from './BidCreator.js';
+import AuctionCreator from './AuctionCreator.js';
 import AuctionBrowser from './AuctionBrowser.js';
 
 /*
@@ -9,7 +9,7 @@ import AuctionBrowser from './AuctionBrowser.js';
   Different "pages" (components) can be flipped through here with currentComponent.
 */
 const Home = () => {
-  let [currentComponent, setCurrentComponent] = React.useState("BidCreator"); //hook's currentComponent State
+  let [currentComponent, setCurrentComponent] = React.useState("AuctionCreator"); //hook's currentComponent State
   
   /*
     Returns the actual component to be displayed, using the currentComponent state.
@@ -17,8 +17,8 @@ const Home = () => {
   const getCurrentComponent = () => {
     let component;
     switch (currentComponent){
-        case 'BidCreator' :
-          component = <BidCreator setParentComponent = {changeCurrentComponent}/>;
+        case 'AuctionCreator' :
+          component = <AuctionCreator setParentComponent = {changeCurrentComponent}/>;
           break;
         case 'AuctionBrowser' :
           component = <AuctionBrowser setParentComponent = {changeCurrentComponent}/>;
@@ -30,7 +30,7 @@ const Home = () => {
   /*
     Changes the currentComponent state.
     parameter must be of the following options:
-    'BidCreator', 'AuctionBrowser'
+    'AuctionCreator', 'AuctionBrowser'
     @param component
   */
   const changeCurrentComponent = (component) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './Home';
 import '../App.css';
-import BidCreator from './BidCreator.js';
+import AuctionCreator from './AuctionCreator.js';
 
 /*
     The AuctionBrowser component, where the list of auctions exist.
@@ -14,7 +14,7 @@ const AuctionBrowser = ({setParentComponent}) => {
     /*
         Builds an array from the array of auctions from the server's API. Called every time the page is refreshed.
     */
-    async function getBids (){
+    async function getAuctions (){
         /*
          * Place API code here OR temporary fake auctions, example:
          * NOTE: This should implement useState like in Home.js. Only use this as a reference. 
@@ -35,7 +35,7 @@ const AuctionBrowser = ({setParentComponent}) => {
             </p>
             <ul id = "browser" className="Auction-browser"></ul>
 
-            <button className="Join-Button" onClick={() => setParentComponent('BidCreator')}>Create an Auction</button>
+            <button className="Join-Button" onClick={() => setParentComponent('AuctionCreator')}>Create an Auction</button>
             
         </div>
        
