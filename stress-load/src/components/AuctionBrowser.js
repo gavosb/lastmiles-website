@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './Home';
 import '../App.css';
+import BidCreator from './BidCreator.js';
 
 /*
     The AuctionBrowser component, where the list of auctions exist.

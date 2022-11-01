@@ -1,8 +1,7 @@
 import React from 'react';
 import '../App.css';
 import logo from '../logo.png';
-import ServerBrowser from './ServerBrowser.js';
-import Room from './Room.js';
+import AuctionBrowser from './AuctionBrowser.js';
 
 const BidCreator = () => {
 
