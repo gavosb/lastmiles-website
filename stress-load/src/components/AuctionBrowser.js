@@ -9,8 +9,31 @@ import AuctionCreator from './AuctionCreator.js';
 */
 const AuctionBrowser = ({setParentComponent}) => {
     
-    let codes = [];
+    let auction_list = [];
     
+    
+    /*
+     * This component displays a clickable auction,
+     * which will change the page to the auction component.
+     * 
+     */
+    const AuctionElement = ({ value, setValue }) => {
+	  const onChange = (event) => setValue(event.target.value);
+
+	  return (
+		<div onClick={setParentComponent('Auction')}>
+			<Card.Body>
+				<Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                    test
+                 </Card.Text>
+                 <Button variant="primary">Go somewhere</Button>
+			</Card.Body>
+		</div>
+	  )
+	}
+
+
     /*
         Builds an array from the array of auctions from the server's API. Called every time the page is refreshed.
     */
@@ -26,8 +49,9 @@ const AuctionBrowser = ({setParentComponent}) => {
         });
         */
         
+        
     }
-    getPeers();
+    getAuctions();
     return (
         <div>
             <p className="App-intro">
