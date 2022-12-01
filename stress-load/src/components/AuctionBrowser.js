@@ -9,30 +9,8 @@ import AuctionCreator from './AuctionCreator.js';
 */
 const AuctionBrowser = ({setParentComponent}) => {
     
-    let auction_list = [];
+    let auction_references = []
     
-    
-    /*
-     * This component displays a clickable auction,
-     * which will change the page to the auction component.
-     * 
-     */
-    const AuctionElement = ({ value, setValue }) => {
-	  const onChange = (event) => setValue(event.target.value);
-
-	  return (
-		<div onClick={setParentComponent('Auction')}>
-			<Card.Body>
-				<Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                    test
-                 </Card.Text>
-                 <Button variant="primary">Go somewhere</Button>
-			</Card.Body>
-		</div>
-	  )
-	}
-
 
     /*
         Builds an array from the array of auctions from the server's API. Called every time the page is refreshed.
@@ -52,13 +30,18 @@ const AuctionBrowser = ({setParentComponent}) => {
         
     }
     getAuctions();
+    
+   function buttonAction(){
+	   return;
+   }
     return (
         <div>
             <p className="App-intro">
             Open Auctions:
             </p>
-            <ul id = "browser" className="Auction-browser"></ul>
-
+			{components.map((comp, i) => React.createElement(comp, { key: i })}
+			
+			  
             <button className="Join-Button" onClick={() => setParentComponent('AuctionCreator')}>Create an Auction</button>
             
         </div>
