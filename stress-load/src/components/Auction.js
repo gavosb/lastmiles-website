@@ -1,12 +1,10 @@
 import React from 'react';
 import '../App.css';
-import logo from '../logo.png';
+import logo from '../logo.svg';
 import AuctionBrowser from './AuctionBrowser.js';
-import Auction from './Auction.js';
 
 const Auction = () => {
 
-  }
     return (
       
         <div className="App">

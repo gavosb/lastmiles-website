@@ -39,7 +39,7 @@ const AuctionBrowser = ({setParentComponent}) => {
             <p className="App-intro">
             Open Auctions:
             </p>
-			{auction_references.map((comp, i) => React.createElement(comp, { key: i })}
+			{auction_references.map((comp, i) => React.createElement(comp, { key: i }))}
 			
 			  
             <button className="Join-Button" onClick={() => setParentComponent('AuctionCreator')}>Create an Auction</button>

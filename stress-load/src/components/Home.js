@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import logo from '../logo.png';
+import logo from '../logo.svg';
 import AuctionCreator from './AuctionCreator.js';
 import AuctionBrowser from './AuctionBrowser.js';
 
@@ -9,7 +9,7 @@ import AuctionBrowser from './AuctionBrowser.js';
   Different "pages" (components) can be flipped through here with currentComponent.
 */
 const Home = () => {
-  let [currentComponent, setCurrentComponent] = React.useState("AuctionCreator"); //hook's currentComponent State
+  let [currentComponent, setCurrentComponent] = React.useState("AuctionBrowser"); //hook's currentComponent State
   
   /*
     Returns the actual component to be displayed, using the currentComponent state.
