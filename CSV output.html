@@ -1,0 +1,50 @@
+<html>  
+<head>  
+<title> Download CSV file </title>  
+</head>  
+  
+<script>  //To be implemented into the website
+
+var csvAuctionData =[
+    ['6' ,'Boxes', 'Buns', 'Yes', 'No', 'Pallet & ramp', 'Wendys', 'Wendy@email.com', '12/10/22 1:00pm', '123 Wendy St.', '6:00AM - 10:00PM'],
+    ['20' ,'Bags', 'Bars', 'No', 'Yes', 'Lift', 'Walmart', 'Walmart@email.com', '12/12/22 6:00am', '123 Walmart Rd.', '6:00AM - 11:00PM']
+];
+
+    
+//function to download CSV file   
+function download_csv_file() {  
+  
+    //define the heading for each row of the data  
+    var csv = 'Number ,Packaging, Food type, Cooler needed, Pallet Needed?, Equipment, Organization, Email, Deadline, Address, Operation Hours\n';  
+      
+    //merge the data with CSV 
+    // Not final method to add data to excel files
+    csvAuctionData.forEach(function(row) {  
+            csv += row.join(',');  
+            csv += "\n";  
+    });  
+     
+    document.write(csv);  
+  
+    
+    // encodes the CSV
+    var hiddenElement = document.createElement('a');  
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);  
+    hiddenElement.target = '_blank'; 
+      
+    //provide the name for the CSV file to be downloaded  
+    hiddenElement.download = "LastMile";
+    hiddenElement.click();  
+}  
+</script>  
+  
+<body>  
+<h3> Click the button to download the CSV file </h3>  
+
+<input type="text" placeholder="File Name" id="Fname">
+
+
+<button onclick="download_csv_file()"> Download CSV </button>
+
+</body>  
+</html>  

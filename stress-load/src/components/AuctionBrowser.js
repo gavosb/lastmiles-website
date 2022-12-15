@@ -17,9 +17,14 @@ const AuctionButton = () => {
 }
 
 /*
-    The AuctionBrowser component, where the list of auctions exist.
-    This component takes Home's state function as a prop, so that it can change the page to a new component.
+    The AuctionBrowser component displays a list of all active auctions.
+    Users are also able to click on each auction to view more details about them,
+    as well as make bids on any auctions they may be interested in.
+    In the future, auctions will be displayed based on how much time they have before they expire:
+    An auction with very little time left will be displayed first, to ensure that
+    as little food as possible goes to waste.
 */
+
 const AuctionBrowser = ({setParentComponent}) => {
     
     /*

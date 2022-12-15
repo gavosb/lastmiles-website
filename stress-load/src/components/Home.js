@@ -5,8 +5,9 @@ import AuctionCreator from './AuctionCreator.js';
 import AuctionBrowser from './AuctionBrowser.js';
 
 /*
-  The Home Component - Serves as the basis for all other components and to which they all aspire.
-  Different "pages" (components) can be flipped through here with currentComponent.
+  The Home Component - Serves as the basis for what the user sees in the website.
+  This component is responsible for switching between two other components: AuctionBrowser and AuctionCreator.
+  The selected component is displayed to the user, while the other is hidden.
 */
 const Home = () => {
   let [currentComponent, setCurrentComponent] = React.useState("AuctionBrowser"); //hook's currentComponent State
