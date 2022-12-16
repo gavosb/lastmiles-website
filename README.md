@@ -152,7 +152,13 @@ https://jestjs.io/docs/tutorial-react
 
 #### React Description:
 
-This project is written in a functional way, not an object-oriented one. We pass functions around as they're rendered dynamically by react into JSX components. State is supplemented by the useState hook from the React library.
+This project is written in a functional way, not an object-oriented one. We pass functions around as they're rendered dynamically by react into JSX components. State is supplemented by the useState hook from the React library. Anyway, here are a list of component descriptions:
+
+**App.css**
+
+* Not a component
+
+Ignore the irony of this not being a component. It's important; this is the css for the entire project and it largely defines how things look and where the boundaries are. If you're wondering how to give a component shape rather than just function, this is the place.
 
 **Home**
 
