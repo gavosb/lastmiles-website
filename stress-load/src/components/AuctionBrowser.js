@@ -2,17 +2,22 @@ import React from 'react';
 import Home from './Home';
 import '../App.css';
 import AuctionCreator from './AuctionCreator.js';
+import Auction from './Auction.js';
+import {useState} from 'react';
 
 /*
- * This component takes parameters that allow it to set a value.
+ * This component takes the setParentComponent function so that it may change to
+ * another component to use as the main page. The state it keeps should be set
+ * at component creation, which will need to be the auctionID and title needed
+ * for the Auction component to make appropriate API calls. 
  */
-const AuctionButton = () => {
+const AuctionButton = ({setParentComponent}) => {
 	const [textState, setTextState] = useState('Auction Default Title');
-	const [auctionID, setAuctionID] = useState(''); // UID of Auction for API
+	const [auctionID, setAuctionID] = useState('000'); // UID of Auction for API
     //const onChange = (event) => setAuctionID(event.target.value);
 
    return (
-     <button className="Auction-Button" onClick={() => setParentComponent('Auction')}{textState}</button>
+     <button className="Auction-Button" onClick={() => setParentComponent('Auction')}> {textState} </button>
    )
 }
 
@@ -33,10 +38,18 @@ const AuctionBrowser = ({setParentComponent}) => {
      * The details of this will be dependent on the chosen API implementation.
      * 
     */
-          
     
-    let b1 = <AuctionButton/>
-    let auction_references = [b1]
+    // consider something more like this if we need to pass state in at creation time:      
+    // {auction_references.map((comp, i) => React.createElement(comp, { key: i }))}
+    // mapping to actually render these as components may also be the way to get them to render vertically
+    // honestly, that can probably be done by messing with CSS
+    let b1 = <AuctionButton className="Auction-Button" setParentComponent = {setParentComponent}/>;
+    let b2 = <AuctionButton className="Auction-Button" setParentComponent = {setParentComponent}/>;
+    let b3 = <AuctionButton className="Auction-Button" setParentComponent = {setParentComponent}/>;
+    let b4 = <AuctionButton className="Auction-Button" setParentComponent = {setParentComponent}/>;
+    let b5 = <AuctionButton className="Auction-Button" setParentComponent = {setParentComponent}/>;
+
+    let auction_references = [b1, b2, b3, b4, b5]; //note, may be worthwhile to test setting text on these
 	
     /*
         Builds an array from the array of auctions from the server's API. Called every time the page is refreshed.
@@ -51,15 +64,13 @@ const AuctionBrowser = ({setParentComponent}) => {
         codes.forEach(element => {
             document.getElementById('browser').innerHTML += ('<br><li> ID: '+element+'</li>');
         });
+        * 
         */
         
         
     }
     getAuctions();
     
-   function buttonAction(){
-	   return;
-   }
     return (
         <div>
 			<div className="App-header">
@@ -69,8 +80,7 @@ const AuctionBrowser = ({setParentComponent}) => {
             Open Auctions:
             </p>
             <ul id = "browser" className="Auction-browser">
-            test
-			{auction_references.map((comp, i) => React.createElement(comp, { key: i }))}
+			{[auction_references]}
 			</ul>
 			  
             <button className="Create-Button" onClick={() => setParentComponent('AuctionCreator')}>Create an Auction</button>

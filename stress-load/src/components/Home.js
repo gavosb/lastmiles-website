@@ -3,6 +3,7 @@ import '../App.css';
 import logo from '../logo.svg';
 import AuctionCreator from './AuctionCreator.js';
 import AuctionBrowser from './AuctionBrowser.js';
+import Auction from './Auction.js';
 
 /*
   The Home Component - Serves as the basis for what the user sees in the website.
@@ -24,6 +25,9 @@ const Home = () => {
         case 'AuctionBrowser' :
           component = <AuctionBrowser setParentComponent = {changeCurrentComponent}/>;
           break;
+        case 'Auction' :
+			component = <Auction setParentComponent = {changeCurrentComponent}/>;
+			break;
     }
     return component;
   }
