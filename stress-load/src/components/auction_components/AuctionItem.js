@@ -12,7 +12,7 @@ import {useState} from 'react';
 const AuctionItem = () => {
 	const [itemName, setItemName] = useState('Default Item Name');
 	const [auctionID, setAuctionID] = useState('000'); // UID of Auction for API
-	const [itemType, setItemType] = useState('Auction'); // Types: Auction, Inventory - to determine whether to add or subtract
+	const [itemType, setItemType] = useState('Auction'); // Types: AuctionCreator, AuctionDisplay, InventoryDisplay - to determine whether to add or subtract
 	
     return (
       <div>
