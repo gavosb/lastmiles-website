@@ -35,7 +35,7 @@ const Home = () => {
   /*
     Changes the currentComponent state.
     parameter must be of the following options:
-    'AuctionCreator', 'AuctionBrowser'
+    'AuctionCreator', 'AuctionBrowser', 'Auction'
     @param component
   */
   const changeCurrentComponent = (component) => {

@@ -25,9 +25,11 @@ const AuctionButton = ({setParentComponent}) => {
     The AuctionBrowser component displays a list of all active auctions.
     Users are also able to click on each auction to view more details about them,
     as well as make bids on any auctions they may be interested in.
-    In the future, auctions will be displayed based on how much time they have before they expire:
-    An auction with very little time left will be displayed first, to ensure that
-    as little food as possible goes to waste.
+
+    There are some ways this can be improved upon, such as:
+    -Sort the auctions based on a variable. 
+    For example, make auctions with the least time remaining shown first
+    -Use HTML/CSS to improve the User Interface, and make it easier to use
 */
 
 const AuctionBrowser = ({setParentComponent}) => {
