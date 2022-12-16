@@ -108,9 +108,19 @@ As for getting to production, keep in mind that everything will need to be updat
 
 When the site is ready for production, run create-react-app's build commands and host the files on any http server of your choosing, such as nginx or apache. This should ideally be done on lastmile's infrastructure.
 
+Become familiarized with React before delving into this project. Make a test project first, and really understand what is going on. Look into React hooks afterwards.
+
+https://reactjs.org/tutorial/tutorial.html
+
+https://reactjs.org/docs/hooks-intro.html
+
 **webAPI**
 
 fastAPI does not need a database. It can basically just expose python to HTTP; for our purposes, we could just continuously update a CSV file or even an excel sheet directly, and that will be what we can hand in to last mile. So far, we just have a template python script for the API that starts a server. It can make a GET and PUT request for an "item".
+
+Follow this guide and become familiarized with fastAPI before making any further changes. Consider creating a test project first.
+
+https://fastapi.tiangolo.com/tutorial/first-steps/
 
 **Issues Previously Encountered**
 
