@@ -82,7 +82,9 @@ By the end of the semester, we plan to have these in place in a skeletal
 form along with the basic structure of the website, which as of writing
 is complete.
 
-[For future developers:]{.underline}
+**For future developers:**
+
+Read the environment setup guide, found in the same directory as this file.
 
 What I suggest doing is setting up a proper testing environment, and
 then creating all the sub-components for the Auction page. Create each
@@ -101,6 +103,14 @@ auctionID) set from a GET request as well.
 After this is done AuctionCreator will follow a similar process. Then
 it's just a matter of creating something to turn the database into an
 excel file on the server side which can be given to Last Miles.
+
+As for getting to production, keep in mind that everything will need to be updated dynamically, and conditions need to be checked before any claims are to be made. This is so that agencies won't claim food that no longer exists; eg, one agency claimed everything just seconds before. In order to overcome this, an observer pattern may need to be implemented so that clients 'pulse' the server, which will urge all others to update.
+
+When the site is ready for production, run create-react-app's build commands and host the files on any http server of your choosing, such as nginx or apache. This should ideally be done on lastmile's infrastructure.
+
+**webAPI**
+
+fastAPI does not need a database. It can basically just expose python to HTTP; for our purposes, we could just continuously update a CSV file or even an excel sheet directly, and that will be what we can hand in to last mile. So far, we just have a template python script for the API that starts a server. It can make a GET and PUT request for an "item".
 
 **Issues Previously Encountered**
 
@@ -130,9 +140,9 @@ relying on what React gives you in WSL.
 
 https://jestjs.io/docs/tutorial-react
 
-**REACT DESCRIPTION: **
+#### React Description:
 
-**\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--**
+This project is written in a functional way, not an object-oriented one. We pass functions around as they're rendered dynamically by react into JSX components. State is supplemented by the useState hook from the React library.
 
 **Home**
 
@@ -153,7 +163,7 @@ https://jestjs.io/docs/tutorial-react
 
 **AuctionBrowser**
 
--   **Contains a scrollable list of active Auctions**
+-   Contains a scrollable list of active Auctions
 
 The idea here is to just create subcomponents to be displayed and store
 them in a list which will display on the page. The data will need to be
@@ -162,14 +172,20 @@ in-place here in the meantime.
 
 **Auction**
 
--   **Displays auctions after a user selects them in Auction Browser**
+-   Displays auctions after a user selects them in Auction Browser
 
 This component is the primary one for the page that displays auctions
 themselves, with bidding buttons and all.
 
 **AuctionCreator**
 
--   **Page to create an action**
+-   Page to create an action
 
 Everything you would need to create an auction, much like the auction
 page itself.
+
+**AuctionItem**
+
+* Displays the name and quantity of an item, with a button that either claims, declaims, or creates quantities of the item - depending on the type of AuctionItem it is, determined by its type state
+
+Can be found in both AuctionCreator or Auction, within a scrollable list.
