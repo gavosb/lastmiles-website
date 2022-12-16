@@ -5,6 +5,7 @@
   
 <script>  //To be implemented into the website
 
+// Sample Entires
 var csvAuctionData =[
     ['6' ,'Boxes', 'Buns', 'Yes', 'No', 'Pallet & ramp', 'Wendys', 'Wendy@email.com', '12/10/22 1:00pm', '123 Wendy St.', '6:00AM - 10:00PM'],
     ['20' ,'Bags', 'Bars', 'No', 'Yes', 'Lift', 'Walmart', 'Walmart@email.com', '12/12/22 6:00am', '123 Walmart Rd.', '6:00AM - 11:00PM']
@@ -32,7 +33,7 @@ function download_csv_file() {
     hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);  
     hiddenElement.target = '_blank'; 
       
-    //provide the name for the CSV file to be downloaded  
+    //provide the name for the CSV file to be downloaded *naming text box does not function correctly*
     hiddenElement.download = "LastMile";
     hiddenElement.click();  
 }  
@@ -40,10 +41,10 @@ function download_csv_file() {
   
 <body>  
 <h3> Click the button to download the CSV file </h3>  
-
+<!-- Button For name of File *Does Not Function Properly* -->
 <input type="text" placeholder="File Name" id="Fname">
 
-
+<!-- Downloads File -->
 <button onclick="download_csv_file()"> Download CSV </button>
 
 </body>  
