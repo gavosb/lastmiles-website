@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import logo from '../logo.svg';
 import AuctionBrowser from './AuctionBrowser.js';
+import AuctionItem from './auction_components/AuctionItem.js';
 import {useState} from 'react';
 
 /*
@@ -19,6 +20,10 @@ const Auction = ({setParentComponent}) => {
 	const [titleState, setTitleState] = useState('Auction Default Title');
 	const [auctionID, setAuctionID] = useState('000'); // UID of Auction for API
 	
+	let b1 = <AuctionItem className="Auction-Item"/>;
+    let item_references = [b1]
+    let item_inventory = [b1]
+	
     return (
       
         <div className="App">
@@ -27,14 +32,40 @@ const Auction = ({setParentComponent}) => {
           <h2>{titleState}</h2>
         </div>
         
-        <div class="container" className="Request Form">
-			<label for="email"><b>Email</b></label>
-			<input type="text" placeholder="Email" name="email" required/>
+        {titleState}
+        
+        <div class="container" className="Auction-Display">
+			<label><b>Location: </b></label><br/>
+			<label><b>Organization: </b></label><br/>
+			<label><b>Time Created: </b></label><br/>
+			<label><b>Expiration Date: </b></label><br/>
 			
+			
+			<ul id = "itemsLeft" className="Items-Left">
+				{[item_references]}
+			</ul>
+        </div>
+        
+        <div class="container" className="Request-Form">
+			
+			<label for="location"><b>Location</b></label>
+			<input type="text" placeholder="Location" name="location" required/>
+			<br/>
 			<label for="agency"><b>Agency</b></label>
 			<input type="text" placeholder="Agency Name" name="agency" required/>
+			<br/>
+			<label for="email"><b>Email</b></label>
+			<input type="text" placeholder="Email" name="email" required/>
+			<br/>
 			
+			<ul id = "itemInventory" className="Item-Inventory">
+				{[item_inventory]}
+			</ul>
         </div>
+        
+        <button className="Confirm-Bid" onClick={() => setParentComponent('AuctionBrowser')}>Confirm Bid</button>
+            
+        
       </div>
     );
 }
