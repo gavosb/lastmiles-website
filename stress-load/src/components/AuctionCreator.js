@@ -9,8 +9,14 @@ import AuctionItem from './auction_components/AuctionItem.js';
   through which users can create stress loads.
   This is done by letting them input values in text boxes (such as how much food there is),
   then submitting the newly created auction.
-  In the future, this will need to be linked with a database, creating the auction there instead.
-  Otherwise, the auction will only be stored locally, preventing anyone else from ever seeing it.
+
+  There are some ways this can be improved upon, such as:
+  -Linking the creator to a database, so that it will be able to store the auction.
+  Relying on the website to do this would cause auctions to be stored locally, so nobody
+  else can see them.
+  -Use HTML/CSS to improve how this looks, and make it easier to use.
+  -Create new values for any other important parts of an auction that may be missing here.
+  If these are changed, the Auction component will also need to be changed.
 */
 
 const AuctionCreator = ({setParentComponent}) => {
